@@ -34,7 +34,8 @@ ai-toolkit/
 │   │   └── templates/{interview,synthesis}-template.md
 │   ├── learn/SKILL.md               # Deep-dive research saved as reusable knowledge
 │   ├── parallel-prototype/SKILL.md  # 3 structurally different HTML prototypes, compared
-│   └── pdf/SKILL.md                 # PDF toolkit — extract, create, merge/split, forms
+│   ├── pdf/SKILL.md                 # PDF toolkit — extract, create, merge/split, forms
+│   └── docx/SKILL.md                # Word docs — create, edit, tracked changes, redlining
 ├── agents/                      # Subagents (invoke via the Agent tool)
 │   ├── cpto-review.md            # Executive CPTO-level review
 │   ├── prd-reviewer.md          # Senior-PM critique of a PRD/spec
@@ -77,6 +78,7 @@ These activate automatically when your request matches:
 - **learn** — deep-dive research on a topic (web sources or a provided document), saved as a structured knowledge artifact in `~/.claude/knowledge/` for future reference. Keep saved knowledge general — not customer-specific data.
 - **parallel-prototype** — generates 3 structurally different HTML prototypes in parallel (wizard vs single-page vs dashboard, etc.), presents a comparison matrix, and optionally pushes the winner/all to Figma. Pairs with the prototype-builder agent.
 - **pdf** — PDF manipulation toolkit: extract text/tables, create PDFs, merge/split, rotate, watermark, OCR scanned docs, and fill forms (via pypdf, pdfplumber, reportlab, and CLI tools like qpdf).
+- **docx** — Word document creation, editing, and analysis: text extraction (pandoc), docx-js for new docs, OOXML editing, and a redlining workflow for precise tracked changes and comments.
 
 ## Agents
 
