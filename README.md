@@ -17,7 +17,8 @@ ai-toolkit/
 │   ├── competitive-analysis.md  # /competitive-analysis — analyze a competitor
 │   ├── customer-brief.md        # /customer-brief — pre-meeting account intel brief
 │   ├── decision-brief.md        # /decision-brief — 1-page decision brief w/ recommendation
-│   └── experiment.md            # /experiment — design, plan & analyse A/B tests
+│   ├── experiment.md            # /experiment — design, plan & analyse A/B tests
+│   └── feature-request.md       # /feature-request — intake & triage a request (RICE)
 ├── skills/                      # Skills (auto-trigger from context)
 │   ├── prd-writing/SKILL.md         # Writing and refining PRDs
 │   ├── research-synthesis/SKILL.md  # Synthesizing user research into insights
@@ -96,6 +97,7 @@ ai-toolkit/
 | `/customer-brief [account]` | Runs the `customer-brief-analyst` agent to assemble a 1-page pre-meeting brief (usage, support sentiment, open issues, talking points) from Amplitude, Intercom, Glean, Jira, and Slack. |
 | `/decision-brief [decision]` | Produces a crisp 1-page decision brief — options, trade-offs, and a clear recommendation. Runs the `decision-brief` skill. |
 | `/experiment [feature \| analyse <name>]` | Guides an A/B test end to end — hypothesis framing, metric selection, sample-size/duration math, launch checklist, and result interpretation (Amplitude-aware). |
+| `/feature-request [request]` | Intake and triage a feature request: captures context, impact and effort, scores it with RICE, and recommends a priority (P0–P3/Backlog/Decline) with next steps. |
 
 ## Skills
 
