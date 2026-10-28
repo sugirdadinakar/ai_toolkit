@@ -69,4 +69,11 @@ Content/reference docs (not auto-loaded as skills): `jtbd.md`,
 - Added `skills/xlsx/recalc.py` (LibreOffice-based formula recalculation + error scan), closing the xlsx recalculation gap.
 - Removed stray `skills/learn.zip` and `skills/rapid-prototype.zip` artifacts.
 
+### Imported (MIT, from github.com/Shubhamsaboo/taste-skill)
+- `taste-skill`, `taste-skill-v1`, `gpt-tasteskill`, plus the family: `brandkit`,
+  `brutalist-skill`, `minimalist-skill`, `soft-skill`, `redesign-skill`,
+  `stitch-skill`, `output-skill`, `image-to-code-skill`, `imagegen-frontend-web`,
+  `imagegen-frontend-mobile`. Each keeps the upstream `LICENSE` + an `ATTRIBUTION.md`.
+- `taste-skill` also carries the upstream `research/`, `examples/`, and `assets/`.
+
 [1.1.0]: https://github.com/sugirdadinakar/ai_toolkit

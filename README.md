@@ -69,11 +69,25 @@ ai-toolkit/
 │   ├── taste-skill/                 # "design-taste-frontend" anti-slop frontend skill (MIT, imported)
 │   │   ├── SKILL.md
 │   │   ├── LICENSE
-│   │   └── ATTRIBUTION.md
+│   │   ├── ATTRIBUTION.md
+│   │   ├── research/                # "LLM laziness" research backing the methodology
+│   │   ├── examples/                # example output screenshots
+│   │   └── assets/                  # upstream logos/banner images
 │   ├── taste-skill-v1/              # "design-taste-frontend-v1" — original v1 (MIT, imported)
 │   │   └── SKILL.md + LICENSE + ATTRIBUTION.md
 │   ├── gpt-tasteskill/              # "gpt-taste" — UX/UI + GSAP motion variant (MIT, imported)
 │   │   └── SKILL.md + LICENSE + ATTRIBUTION.md
+│   ├── brandkit/                    # taste-family: brand kit generation (MIT, imported)
+│   ├── brutalist-skill/             # taste-family: brutalist aesthetic (MIT, imported)
+│   ├── minimalist-skill/            # taste-family: minimalist aesthetic (MIT, imported)
+│   ├── soft-skill/                  # taste-family: soft aesthetic (MIT, imported)
+│   ├── redesign-skill/              # taste-family: redesign workflow (MIT, imported)
+│   ├── stitch-skill/                # taste-family: stitch design (+ DESIGN.md) (MIT, imported)
+│   ├── output-skill/                # taste-family: output formatting (MIT, imported)
+│   ├── image-to-code-skill/         # taste-family: image → code (MIT, imported)
+│   ├── imagegen-frontend-web/       # taste-family: web image generation (MIT, imported)
+│   ├── imagegen-frontend-mobile/    # taste-family: mobile image generation (MIT, imported)
+│   │                                #   (each of the 10 above: SKILL.md + LICENSE + ATTRIBUTION.md)
 │   ├── jtbd.md                      # (flat reference) Jobs-to-be-Done extractor
 │   ├── opportunity-tree.md          # (flat reference) Opportunity Solution Tree
 │   ├── prd.md                       # (flat reference) PRD generator template
@@ -139,6 +153,7 @@ These activate automatically when your request matches:
 - **taste-skill** (`design-taste-frontend`) — "anti-slop" frontend skill for landing pages, portfolios, and redesigns: reads the brief, infers a design direction, and ships non-templated interfaces. Imported from [Shubhamsaboo/taste-skill](https://github.com/Shubhamsaboo/taste-skill) (MIT; see the skill's `LICENSE`/`ATTRIBUTION.md`).
 - **taste-skill-v1** (`design-taste-frontend-v1`) — the original v1 of the taste-skill, kept for backward compatibility. Imported (MIT).
 - **gpt-tasteskill** (`gpt-taste`) — GPT-oriented UX/UI + advanced GSAP motion variant (randomized layouts, AIDA structure, scroll choreography). Imported (MIT).
+- **taste-skill family** (10 more, imported MIT) — `brandkit`, `brutalist-skill`, `minimalist-skill`, `soft-skill`, `redesign-skill`, `stitch-skill`, `output-skill`, `image-to-code-skill`, `imagegen-frontend-web`, `imagegen-frontend-mobile`. Aesthetic/workflow variants from the same upstream repo. The `taste-skill` folder also carries the upstream `research/`, `examples/`, and `assets/`.
 
 ## Agents
 
