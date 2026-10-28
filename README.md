@@ -63,13 +63,17 @@ ai-toolkit/
 │   ├── web-browser/                 # Remote-control Chrome via CDP (puppeteer-core)
 │   │   ├── SKILL.md
 │   │   └── tools/{start,nav,eval,screenshot,pick}.js + package.json + package-lock.json
-│   └── xlsx/SKILL.md                # Spreadsheets — formulas, formatting, recalc, analysis
-│       ├── SKILL.md
-│       ├── html2pptx.md             # HTML→PPTX workflow reference
-│       ├── ooxml.md                 # PPTX OOXML editing reference
-│       ├── html2pptx/{package.json,index.js}   # the html2pptx library
-│       ├── ooxml/scripts/{unpack,pack,validate}.py
-│       └── scripts/{inventory,replace,rearrange,thumbnail}.py
+│   ├── xlsx/SKILL.md                # Spreadsheets — formulas, formatting, recalc, analysis
+│   │                                # (needs a recalc.py helper to run recalculation)
+│   ├── jtbd.md                      # (flat reference) Jobs-to-be-Done extractor
+│   ├── opportunity-tree.md          # (flat reference) Opportunity Solution Tree
+│   ├── prd.md                       # (flat reference) PRD generator template
+│   ├── prioritization.md            # (flat reference) RICE/MoSCoW/Kano/ICE frameworks
+│   ├── probtoprd.md                 # (flat reference) problem → PRD discovery workflow
+│   ├── user-stories.md              # (flat reference) INVEST user-story generator
+│   ├── recall.md                    # (flat reference) retrieve learned knowledge
+│   ├── learn.zip                    # packaged copy of the learn skill
+│   └── rapid-prototype.zip          # packaged copy of the rapid-prototype skill
 ├── agents/                      # Subagents (invoke via the Agent tool)
 │   ├── cpto-review.md            # Executive CPTO-level review
 │   ├── prd-reviewer.md          # Senior-PM critique of a PRD/spec
@@ -81,9 +85,12 @@ ai-toolkit/
 │   ├── prototype-builder.md     # Zero-build interactive HTML prototypes
 │   ├── ux-designer.md           # User flows, IA, and UX critique
 │   └── voice-of-customer.md     # Synthesize customer signal into VoC themes
+├── CHANGELOG.md
 ├── .gitignore
 └── README.md
 ```
+
+> **Note on skills:** folder skills (`skills/<name>/SKILL.md`) are the ones Claude Code auto-loads. The flat `skills/*.md` files above are reference/content docs (some duplicate a folder skill's name, e.g. `prd`, `jtbd`, `recall`); convert them to `skills/<name>/SKILL.md` folders if you want them invocable.
 
 ## Commands
 
