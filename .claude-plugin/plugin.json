@@ -1,1 +1,12 @@
-
+{
+  "name": "ai-toolkit",
+  "description": "Adding PM commands, skills, and agents to turn supercharge Claude code into Ultimate PM Toolkit",
+  "version": "1.1.0",
+  "author": {
+    "name": "Sugirda Dinakar"
+  },
+  "homepage": "https://github.com/sugirda-rgb/ai_toolkit",
+  "repository": "https://github.com/sugirda-rgb/ai_toolkit",
+  "license": "MIT",
+  "keywords": ["product-management", "pm", "jtbd", "prd", "discovery", "prototyping"]
+}
