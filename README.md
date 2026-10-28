@@ -33,7 +33,8 @@ ai-toolkit/
 │   │   ├── examples/parallel-dispatch-example.md
 │   │   └── templates/{interview,synthesis}-template.md
 │   ├── learn/SKILL.md               # Deep-dive research saved as reusable knowledge
-│   └── parallel-prototype/SKILL.md  # 3 structurally different HTML prototypes, compared
+│   ├── parallel-prototype/SKILL.md  # 3 structurally different HTML prototypes, compared
+│   └── pdf/SKILL.md                 # PDF toolkit — extract, create, merge/split, forms
 ├── agents/                      # Subagents (invoke via the Agent tool)
 │   ├── cpto-review.md            # Executive CPTO-level review
 │   ├── prd-reviewer.md          # Senior-PM critique of a PRD/spec
@@ -75,6 +76,7 @@ These activate automatically when your request matches:
 - **interview-analysis** — analyses a folder of customer interview transcripts in parallel (Teresa Torres Continuous Discovery), extracting pain points, workflow use cases, terminology reactions, and unprompted signals, then synthesises cross-interview patterns. Includes analysis + synthesis templates; anonymises PII by default.
 - **learn** — deep-dive research on a topic (web sources or a provided document), saved as a structured knowledge artifact in `~/.claude/knowledge/` for future reference. Keep saved knowledge general — not customer-specific data.
 - **parallel-prototype** — generates 3 structurally different HTML prototypes in parallel (wizard vs single-page vs dashboard, etc.), presents a comparison matrix, and optionally pushes the winner/all to Figma. Pairs with the prototype-builder agent.
+- **pdf** — PDF manipulation toolkit: extract text/tables, create PDFs, merge/split, rotate, watermark, OCR scanned docs, and fill forms (via pypdf, pdfplumber, reportlab, and CLI tools like qpdf).
 
 ## Agents
 
