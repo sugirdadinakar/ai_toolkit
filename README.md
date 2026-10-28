@@ -24,10 +24,14 @@ ai-toolkit/
 │   ├── churn-signal/SKILL.md        # Account health score + recommended intervention
 │   ├── debate/SKILL.md              # Champion vs Sceptic stress-test of an idea
 │   ├── design-an-interface/SKILL.md # "Design it twice" — parallel interface designs
-│   └── impact-sizing/               # ARR impact sizing → Excel workbook
+│   ├── impact-sizing/               # ARR impact sizing → Excel workbook
+│   │   ├── SKILL.md
+│   │   ├── README.md
+│   │   └── generate_impact_sizing.py
+│   └── interview-analysis/          # Parallel interview analysis (Teresa Torres)
 │       ├── SKILL.md
-│       ├── README.md
-│       └── generate_impact_sizing.py
+│       ├── examples/parallel-dispatch-example.md
+│       └── templates/{interview,synthesis}-template.md
 ├── agents/                      # Subagents (invoke via the Agent tool)
 │   ├── cpto-review.md            # Executive CPTO-level review
 │   ├── prd-reviewer.md          # Senior-PM critique of a PRD/spec
@@ -66,6 +70,7 @@ These activate automatically when your request matches:
 - **debate** — stress-tests a product idea with parallel Champion vs Sceptic agents, then synthesises a risk register, minimum viable scope, assumption map, and a go/no-go recommendation.
 - **design-an-interface** — "Design It Twice": spawns parallel sub-agents to produce radically different interface/API designs for a module, then compares them on simplicity, depth, and ease of correct use.
 - **impact-sizing** — guides TAM/SAM/SOM + churn + opportunity analysis to translate a product hypothesis into an ARR estimate, then generates a multi-sheet Excel workbook (bundled `generate_impact_sizing.py`). Handles commercially sensitive CRM/churn data — anonymise and store securely.
+- **interview-analysis** — analyses a folder of customer interview transcripts in parallel (Teresa Torres Continuous Discovery), extracting pain points, workflow use cases, terminology reactions, and unprompted signals, then synthesises cross-interview patterns. Includes analysis + synthesis templates; anonymises PII by default.
 
 ## Agents
 
