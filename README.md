@@ -41,11 +41,12 @@ ai-toolkit/
 │   │   ├── SKILL.md
 │   │   ├── REFERENCE.md             # advanced (pypdfium2, pdf-lib) + troubleshooting
 │   │   └── FORMS.md                 # filling PDF forms
-│   └── docx/                        # Word docs — create, edit, tracked changes, redlining
-│       ├── SKILL.md
-│       ├── docx-js.md               # creating .docx with docx-js
-│       ├── ooxml.md                 # OOXML editing + tracked-change patterns
-│       └── ooxml/scripts/{unpack,pack}.py
+│   ├── docx/                        # Word docs — create, edit, tracked changes, redlining
+│   │   ├── SKILL.md
+│   │   ├── docx-js.md               # creating .docx with docx-js
+│   │   ├── ooxml.md                 # OOXML editing + tracked-change patterns
+│   │   └── ooxml/scripts/{unpack,pack}.py
+│   └── pptx/SKILL.md                # PowerPoint — create (html2pptx/template), edit, analyze
 ├── agents/                      # Subagents (invoke via the Agent tool)
 │   ├── cpto-review.md            # Executive CPTO-level review
 │   ├── prd-reviewer.md          # Senior-PM critique of a PRD/spec
@@ -90,6 +91,7 @@ These activate automatically when your request matches:
 - **parallel-prototype** — generates 3 structurally different HTML prototypes in parallel (wizard vs single-page vs dashboard, etc.), presents a comparison matrix, and optionally pushes the winner/all to Figma. Pairs with the prototype-builder agent.
 - **pdf** — PDF manipulation toolkit: extract text/tables, create PDFs, merge/split, rotate, watermark, OCR scanned docs, and fill forms (via pypdf, pdfplumber, reportlab, and CLI tools like qpdf).
 - **docx** — Word document creation, editing, and analysis: text extraction (pandoc), docx-js for new docs, OOXML editing, and a redlining workflow for precise tracked changes and comments.
+- **pptx** — PowerPoint creation, editing, and analysis: text extraction (markitdown), html2pptx for new decks, template-based decks (rearrange/inventory/replace), OOXML editing, and thumbnail-grid visual validation.
 
 ## Agents
 
