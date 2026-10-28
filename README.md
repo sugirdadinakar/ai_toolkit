@@ -28,10 +28,11 @@ ai-toolkit/
 │   │   ├── SKILL.md
 │   │   ├── README.md
 │   │   └── generate_impact_sizing.py
-│   └── interview-analysis/          # Parallel interview analysis (Teresa Torres)
-│       ├── SKILL.md
-│       ├── examples/parallel-dispatch-example.md
-│       └── templates/{interview,synthesis}-template.md
+│   ├── interview-analysis/          # Parallel interview analysis (Teresa Torres)
+│   │   ├── SKILL.md
+│   │   ├── examples/parallel-dispatch-example.md
+│   │   └── templates/{interview,synthesis}-template.md
+│   └── learn/SKILL.md               # Deep-dive research saved as reusable knowledge
 ├── agents/                      # Subagents (invoke via the Agent tool)
 │   ├── cpto-review.md            # Executive CPTO-level review
 │   ├── prd-reviewer.md          # Senior-PM critique of a PRD/spec
@@ -71,6 +72,7 @@ These activate automatically when your request matches:
 - **design-an-interface** — "Design It Twice": spawns parallel sub-agents to produce radically different interface/API designs for a module, then compares them on simplicity, depth, and ease of correct use.
 - **impact-sizing** — guides TAM/SAM/SOM + churn + opportunity analysis to translate a product hypothesis into an ARR estimate, then generates a multi-sheet Excel workbook (bundled `generate_impact_sizing.py`). Handles commercially sensitive CRM/churn data — anonymise and store securely.
 - **interview-analysis** — analyses a folder of customer interview transcripts in parallel (Teresa Torres Continuous Discovery), extracting pain points, workflow use cases, terminology reactions, and unprompted signals, then synthesises cross-interview patterns. Includes analysis + synthesis templates; anonymises PII by default.
+- **learn** — deep-dive research on a topic (web sources or a provided document), saved as a structured knowledge artifact in `~/.claude/knowledge/` for future reference. Keep saved knowledge general — not customer-specific data.
 
 ## Agents
 
