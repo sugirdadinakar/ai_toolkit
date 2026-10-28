@@ -47,6 +47,7 @@ Invoke with the Agent tool (e.g. "have the prd-reviewer look at this"):
 - **data-brief-analyst** — analyses a provided dataset (CSV, export, pasted table, or screenshot) and produces a structured insight brief with transparent calculations. Works from files, not live sources — use a live-analytics agent for Amplitude queries.
 - **data-storyteller** — turns raw metrics, Amplitude data, or a dashboard into a narrative insight brief with "so what" framing (what happened → why → what it means). Calibrates to audience: exec brief, team review, or deep dive. Pairs with data-brief-analyst (files) by querying live Amplitude itself.
 - **market-research-analyst** — senior-analyst market intelligence: market sizing (TAM/SAM/SOM with shown methodology), competitive landscape, customer segments, and strategic recommendations. Every figure carries an inline citation and a Data Sources section.
+- **prototype-builder** — builds a self-contained, interactive HTML prototype from a PRD, brief, description, or Figma design. Zero-build (Tailwind CDN + vanilla JS), accessible, opens straight in a browser.
 
 ### customer-brief-analyst — features & how it works
 
