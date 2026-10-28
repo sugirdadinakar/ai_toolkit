@@ -1,11 +1,11 @@
 # AI PM Kit Marketplace
 
-Claude Code marketplace for the [AI PM Kit](https://github.com/sugirda-rgb/ai_toolkit) plugin.
+Claude Code marketplace for the [AI PM Kit](https://github.com/sugirdadinakar/ai_toolkit) plugin.
 
 ## Install
 
 ```bash
-claude plugin marketplace add sugirda-rgb/ai_toolkit
+claude plugin marketplace add sugirdadinakar/ai_toolkit
 claude plugin install ai_toolkit
 ```
 

@@ -170,7 +170,7 @@ A pre-call research assistant for PMs. Give it a customer account name (company 
 Add the marketplace and install the plugin:
 
 ```
-/plugin marketplace add sugirda-rgb/ai_toolkit
+/plugin marketplace add sugirdadinakar/ai_toolkit
 /plugin install ai-toolkit@ai-toolkit-marketplace
 ```
 
@@ -178,7 +178,7 @@ Add the marketplace and install the plugin:
 Clone the repo and add it as a marketplace from the local path:
 
 ```bash
-git clone https://github.com/sugirda-rgb/ai_toolkit.git
+git clone https://github.com/sugirdadinakar/ai_toolkit.git
 ```
 
 ```

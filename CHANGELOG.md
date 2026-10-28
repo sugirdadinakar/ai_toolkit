@@ -67,4 +67,4 @@ Content/reference docs (not auto-loaded as skills): `jtbd.md`,
 - `skills/learn.zip` and `skills/rapid-prototype.zip` are packaged artifacts tracked in the repo; remove if unintended.
 - Several data-oriented skills/commands need connectors authorized via `/mcp` (Amplitude, Intercom, Jira, Slack) to pull live data; they degrade gracefully when a source is unavailable.
 
-[1.1.0]: https://github.com/sugirda-rgb/ai_toolkit
+[1.1.0]: https://github.com/sugirdadinakar/ai_toolkit

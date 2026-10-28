@@ -64,7 +64,7 @@ cat > /tmp/test-marketplace/.claude-plugin/marketplace.json << 'EOF'
       "name": "ai_toolkit",
       "source": {
         "source": "url",
-        "url": "https://github.com/sugirda-rgb/ai_toolkit.git",
+        "url": "https://github.com/sugirdadinakar/ai_toolkit.git",
         "ref": "feat/plugin-conversion"
       },
       "description": "AI ToolKit (testing from PR branch)"
@@ -120,7 +120,7 @@ rm -rf /tmp/test-marketplace
 
 Once testing passes, merge the PR on GitHub:
 
-1. Go to the PR page on GitHub (e.g. `https://github.com/sugirda-rgb/ai_toolkit/pulls`)
+1. Go to the PR page on GitHub (e.g. `https://github.com/sugirdadinakar/ai_toolkit/pulls`)
 2. Open the PR
 3. Click the green **"Merge pull request"** button
 4. Click **"Confirm merge"**
@@ -155,7 +155,7 @@ git init
 git add .
 git commit -m "Initial marketplace for AI PM Kit"
 git branch -M main
-git remote add origin https://https://github.com/sugirda-rgb/ai_toolkit-marketplace.git
+git remote add origin https://https://github.com/sugirdadinakar/ai_toolkit-marketplace.git
 git push -u origin main
 ```
 
@@ -168,7 +168,7 @@ git push -u origin main
 Now test the full installation flow that your users will follow:
 
 ```bash
-claude plugin marketplace add sugirda-rgb/ai_toolkit-marketplace
+claude plugin marketplace add sugirdadinakar/ai_toolkit-marketplace
 claude plugin install ai_toolkit
 ```
 
@@ -186,7 +186,7 @@ If it works, you're live. Anyone can now install with those same two commands.
 
 The README already has the new install instructions. Give it a final read on GitHub to make sure it looks right:
 
-`https://github.com/sugirda-rgb/ai_toolkit`
+`https://github.com/sugirdadinakar/ai_toolkit`
 
 ---
 
@@ -221,7 +221,7 @@ git push
 ## Troubleshooting
 
 **"Plugin not found" when installing:**
-The marketplace repo might not be public. Go to `https://github.com/sugirda-rgb/ai_toolkit-marketplace` → Settings → Danger Zone → Change visibility → Public.
+The marketplace repo might not be public. Go to `https://github.com/sugirdadinakar/ai_toolkit-marketplace` → Settings → Danger Zone → Change visibility → Public.
 
 **Commands don't show up after installing:**
 Restart Claude Code. Some installations need a fresh session to pick up new commands and skills.
