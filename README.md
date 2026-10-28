@@ -58,9 +58,10 @@ ai-toolkit/
 │   │   ├── html2pptx/{package.json,index.js}
 │   │   ├── ooxml/scripts/{unpack,pack,validate}.py
 │   │   └── scripts/{inventory,replace,rearrange,thumbnail}.py
-│   └── web-browser/                 # Remote-control Chrome via CDP (puppeteer-core)
-│       ├── SKILL.md
-│       └── tools/{start,nav,eval,screenshot,pick}.js + package.json + package-lock.json
+│   ├── web-browser/                 # Remote-control Chrome via CDP (puppeteer-core)
+│   │   ├── SKILL.md
+│   │   └── tools/{start,nav,eval,screenshot,pick}.js + package.json + package-lock.json
+│   └── xlsx/SKILL.md                # Spreadsheets — formulas, formatting, recalc, analysis
 │       ├── SKILL.md
 │       ├── html2pptx.md             # HTML→PPTX workflow reference
 │       ├── ooxml.md                 # PPTX OOXML editing reference
@@ -116,6 +117,7 @@ These activate automatically when your request matches:
 - **docx** — Word document creation, editing, and analysis: text extraction (pandoc), docx-js for new docs, OOXML editing, and a redlining workflow for precise tracked changes and comments.
 - **pptx** — PowerPoint creation, editing, and analysis: text extraction (markitdown), html2pptx for new decks, template-based decks (rearrange/inventory/replace), OOXML editing, and thumbnail-grid visual validation.
 - **web-browser** — remote-controls Chrome/Chromium via the Chrome DevTools Protocol (navigate, eval JS, screenshot, interactive element picker). Node tools built on `puppeteer-core` (run `npm install` in `tools/`; Node ≥18).
+- **xlsx** — spreadsheet creation, editing, and analysis (openpyxl + pandas): formula-first construction, financial-model formatting conventions, zero-error delivery, and a LibreOffice-based `recalc.py` recalculation workflow.
 
 ## Agents
 
