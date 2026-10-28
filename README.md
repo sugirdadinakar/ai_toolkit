@@ -15,7 +15,8 @@ ai-toolkit/
 │   ├── discovery.md             # /discovery — discovery plan + interview guide
 │   ├── add-mcp.md               # /add-mcp   — how to connect MCP servers
 │   ├── competitive-analysis.md  # /competitive-analysis — analyze a competitor
-│   └── customer-brief.md        # /customer-brief — pre-meeting account intel brief
+│   ├── customer-brief.md        # /customer-brief — pre-meeting account intel brief
+│   └── decision-brief.md        # /decision-brief — 1-page decision brief w/ recommendation
 ├── skills/                      # Skills (auto-trigger from context)
 │   ├── prd-writing/SKILL.md         # Writing and refining PRDs
 │   └── research-synthesis/SKILL.md  # Synthesizing user research into insights
@@ -44,6 +45,7 @@ ai-toolkit/
 | `/add-mcp` | Reference for connecting MCP servers — claude.ai connectors and the `claude mcp add` CLI (scopes, examples, management). |
 | `/competitive-analysis [competitor]` | Researches a competitor (via WebSearch) and produces a structured brief: positioning, feature & pricing comparison, sentiment, Porter's Five Forces, and recommended actions. |
 | `/customer-brief [account]` | Runs the `customer-brief-analyst` agent to assemble a 1-page pre-meeting brief (usage, support sentiment, open issues, talking points) from Amplitude, Intercom, Glean, Jira, and Slack. |
+| `/decision-brief [decision]` | Produces a crisp 1-page decision brief — options, trade-offs, and a clear recommendation. Runs the `decision-brief` skill. |
 
 ## Skills
 
