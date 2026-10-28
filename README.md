@@ -69,6 +69,10 @@ ai-toolkit/
 │   │   ├── SKILL.md
 │   │   ├── LICENSE
 │   │   └── ATTRIBUTION.md
+│   ├── taste-skill-v1/              # "design-taste-frontend-v1" — original v1 (MIT, imported)
+│   │   └── SKILL.md + LICENSE + ATTRIBUTION.md
+│   ├── gpt-tasteskill/              # "gpt-taste" — UX/UI + GSAP motion variant (MIT, imported)
+│   │   └── SKILL.md + LICENSE + ATTRIBUTION.md
 │   ├── jtbd.md                      # (flat reference) Jobs-to-be-Done extractor
 │   ├── opportunity-tree.md          # (flat reference) Opportunity Solution Tree
 │   ├── prd.md                       # (flat reference) PRD generator template
@@ -134,6 +138,8 @@ These activate automatically when your request matches:
 - **web-browser** — remote-controls Chrome/Chromium via the Chrome DevTools Protocol (navigate, eval JS, screenshot, interactive element picker). Node tools built on `puppeteer-core` (run `npm install` in `tools/`; Node ≥18).
 - **xlsx** — spreadsheet creation, editing, and analysis (openpyxl + pandas): formula-first construction, financial-model formatting conventions, zero-error delivery, and a LibreOffice-based `recalc.py` recalculation workflow.
 - **taste-skill** (`design-taste-frontend`) — "anti-slop" frontend skill for landing pages, portfolios, and redesigns: reads the brief, infers a design direction, and ships non-templated interfaces. Imported from [Shubhamsaboo/taste-skill](https://github.com/Shubhamsaboo/taste-skill) (MIT; see the skill's `LICENSE`/`ATTRIBUTION.md`).
+- **taste-skill-v1** (`design-taste-frontend-v1`) — the original v1 of the taste-skill, kept for backward compatibility. Imported (MIT).
+- **gpt-tasteskill** (`gpt-taste`) — GPT-oriented UX/UI + advanced GSAP motion variant (randomized layouts, AIDA structure, scroll choreography). Imported (MIT).
 
 ## Agents
 
