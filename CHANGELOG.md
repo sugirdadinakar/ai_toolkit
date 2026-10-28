@@ -63,8 +63,10 @@ Content/reference docs (not auto-loaded as skills): `jtbd.md`,
 - `.gitignore`
 
 ### Known gaps
-- **xlsx** references a `recalc.py` helper that is not yet included.
-- `skills/learn.zip` and `skills/rapid-prototype.zip` are packaged artifacts tracked in the repo; remove if unintended.
 - Several data-oriented skills/commands need connectors authorized via `/mcp` (Amplitude, Intercom, Jira, Slack) to pull live data; they degrade gracefully when a source is unavailable.
+
+### Fixed
+- Added `skills/xlsx/recalc.py` (LibreOffice-based formula recalculation + error scan), closing the xlsx recalculation gap.
+- Removed stray `skills/learn.zip` and `skills/rapid-prototype.zip` artifacts.
 
 [1.1.0]: https://github.com/sugirdadinakar/ai_toolkit
