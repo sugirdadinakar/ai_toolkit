@@ -13,7 +13,8 @@ ai-toolkit/
 │   ├── prd.md                   # /prd       — draft a PRD from a problem/idea
 │   ├── jtbd.md                  # /jtbd      — Jobs-to-be-Done analysis
 │   ├── discovery.md             # /discovery — discovery plan + interview guide
-│   └── add-mcp.md               # /add-mcp   — how to connect MCP servers
+│   ├── add-mcp.md               # /add-mcp   — how to connect MCP servers
+│   └── competitive-analysis.md  # /competitive-analysis — analyze a competitor
 ├── skills/                      # Skills (auto-trigger from context)
 │   ├── prd-writing/SKILL.md         # Writing and refining PRDs
 │   └── research-synthesis/SKILL.md  # Synthesizing user research into insights
@@ -40,6 +41,7 @@ ai-toolkit/
 | `/jtbd [product]` | Jobs-to-be-Done analysis: job statements, job map, forces of progress, outcome metrics, ranked opportunities. |
 | `/discovery [idea]` | Discovery plan: riskiest assumptions, cheapest tests to invalidate them, and a non-leading interview guide. |
 | `/add-mcp` | Reference for connecting MCP servers — claude.ai connectors and the `claude mcp add` CLI (scopes, examples, management). |
+| `/competitive-analysis [competitor]` | Researches a competitor (via WebSearch) and produces a structured brief: positioning, feature & pricing comparison, sentiment, Porter's Five Forces, and recommended actions. |
 
 ## Skills
 
