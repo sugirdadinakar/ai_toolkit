@@ -44,6 +44,7 @@ Invoke with the Agent tool (e.g. "have the prd-reviewer look at this"):
 - **discovery-interviewer** — builds interview guides, role-plays customers, or critiques your questions (Mom Test style).
 - **cpto-review** — brutally honest, commercially-aware executive review of PRDs, architectures, and strategic decisions from a CPTO perspective.
 - **customer-brief-analyst** — assembles a 1-page pre-meeting intel brief on a named customer account by pulling live signals across your connected tools.
+- **data-brief-analyst** — analyses a provided dataset (CSV, export, pasted table, or screenshot) and produces a structured insight brief with transparent calculations. Works from files, not live sources — use a live-analytics agent for Amplitude queries.
 
 ### customer-brief-analyst — features & how it works
 
