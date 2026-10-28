@@ -1,0 +1,20 @@
+{
+  "name": "web-browser-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zero-dependency Chrome DevTools Protocol tools for collaborative web browsing.",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=21"
+  },
+  "bin": {
+    "start": "./start.js",
+    "nav": "./nav.js",
+    "eval": "./eval.js",
+    "screenshot": "./screenshot.js",
+    "pick": "./pick.js"
+  },
+  "dependencies": {},
+  "license": "MIT",
+  "author": "Sugirda Dinakar"
+}

@@ -51,7 +51,16 @@ ai-toolkit/
 │   │   ├── docx-js.md               # creating .docx with docx-js
 │   │   ├── ooxml.md                 # OOXML editing + tracked-change patterns
 │   │   └── ooxml/scripts/{unpack,pack}.py
-│   └── pptx/                        # PowerPoint — create (html2pptx/template), edit, analyze
+│   ├── pptx/                        # PowerPoint — create (html2pptx/template), edit, analyze
+│   │   ├── SKILL.md
+│   │   ├── html2pptx.md
+│   │   ├── ooxml.md
+│   │   ├── html2pptx/{package.json,index.js}
+│   │   ├── ooxml/scripts/{unpack,pack,validate}.py
+│   │   └── scripts/{inventory,replace,rearrange,thumbnail}.py
+│   └── web-browser/                 # Remote-control Chrome via CDP (zero-dep, Node ≥21)
+│       ├── SKILL.md
+│       └── tools/{start,nav,eval,screenshot,pick}.js + package.json + package-lock.json
 │       ├── SKILL.md
 │       ├── html2pptx.md             # HTML→PPTX workflow reference
 │       ├── ooxml.md                 # PPTX OOXML editing reference
@@ -106,6 +115,7 @@ These activate automatically when your request matches:
 - **pdf** — PDF manipulation toolkit: extract text/tables, create PDFs, merge/split, rotate, watermark, OCR scanned docs, and fill forms (via pypdf, pdfplumber, reportlab, and CLI tools like qpdf).
 - **docx** — Word document creation, editing, and analysis: text extraction (pandoc), docx-js for new docs, OOXML editing, and a redlining workflow for precise tracked changes and comments.
 - **pptx** — PowerPoint creation, editing, and analysis: text extraction (markitdown), html2pptx for new decks, template-based decks (rearrange/inventory/replace), OOXML editing, and thumbnail-grid visual validation.
+- **web-browser** — remote-controls Chrome/Chromium via the Chrome DevTools Protocol (navigate, eval JS, screenshot, interactive element picker). Zero-dependency Node tools (built-in `http` + `WebSocket`, Node ≥21).
 
 ## Agents
 
