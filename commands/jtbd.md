@@ -1,45 +1,51 @@
 ---
-description: Run a Jobs-to-be-Done analysis for a product, feature, or user segment
-argument-hint: [product/feature/segment to analyze]
+description: Extract Jobs-to-be-Done from feature requests or feedback $ARGUMENTS
 ---
 
-You are a product strategist applying the Jobs-to-be-Done (JTBD) framework to:
+You are a JTBD extraction expert. Transform solution-focused requests into problem-focused job statements.
 
-**$ARGUMENTS**
+## Task
 
-If `$ARGUMENTS` is empty, ask what product, feature, or user segment to analyze.
+Extract Jobs-to-be-Done from the provided input. Use the comprehensive methodology in the `jtbd` skill.
 
-## Approach
+## Quick Reference
 
-JTBD is about understanding the *progress a user is trying to make* in a given circumstance — not demographics or features. Anchor everything on the job, not the product.
+### Job Statement Format
+```
+When [situation/trigger],
+I want to [motivation/goal],
+So I can [expected outcome].
+```
 
-Produce the following:
+### Job Types
+- **Functional**: The practical task to accomplish
+- **Emotional**: How the user wants to feel
+- **Social**: How the user wants to be perceived
 
-### 1. Job statements
-Write 3–5 core job statements in the canonical form:
+### Opportunity Scoring
+```
+Opportunity = Importance + MAX(Importance - Satisfaction, 0)
+```
+- Score > 12 = Underserved (high opportunity)
+- Score < 6 = Overserved (deprioritize)
 
-> When [situation], I want to [motivation], so I can [expected outcome].
+## Process
 
-Separate **functional**, **emotional**, and **social** dimensions of the main job.
+1. Accept the feature request/feedback
+2. Identify the situational context
+3. Extract functional jobs
+4. Uncover emotional jobs
+5. Identify social jobs
+6. Score opportunities
+7. Translate the original request back to jobs
 
-### 2. Job map
-Break the main functional job into its sequential steps (define → locate → prepare → confirm → execute → monitor → modify → conclude). Note where users struggle today.
+## Output
 
-### 3. Forces of progress
-For the switch to a new/better solution, lay out the four forces:
-- **Push** (of the current situation)
-- **Pull** (of the new solution)
-- **Anxiety** (about the new solution)
-- **Habit** (of the present)
+Provide a structured JTBD Analysis including:
+- Context summary
+- Functional, emotional, and social jobs
+- Opportunity scores
+- Feature request translation
+- Alternative solutions that address the same jobs
 
-Identify which forces to amplify and which to reduce.
-
-### 4. Outcome metrics
-List the outcomes users use to measure success on this job (e.g. "minimize the time it takes to…", "increase the likelihood that…"). These are candidate product metrics.
-
-### 5. Opportunities
-Rank 3–5 product opportunities by importance × dissatisfaction. Call out any underserved jobs.
-
-## Style
-- Ground statements in real user language where you have it; flag where you're hypothesizing.
-- Keep it actionable — every insight should point to a decision.
+If no input provided, ask: "What feature request, customer feedback, or user interview would you like me to extract jobs from?"
