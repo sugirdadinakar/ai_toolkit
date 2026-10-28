@@ -33,9 +33,18 @@ ai-toolkit/
 │   │   ├── examples/parallel-dispatch-example.md
 │   │   └── templates/{interview,synthesis}-template.md
 │   ├── learn/SKILL.md               # Deep-dive research saved as reusable knowledge
-│   ├── parallel-prototype/SKILL.md  # 3 structurally different HTML prototypes, compared
-│   ├── pdf/SKILL.md                 # PDF toolkit — extract, create, merge/split, forms
-│   └── docx/SKILL.md                # Word docs — create, edit, tracked changes, redlining
+│   ├── parallel-prototype/          # 3 structurally different HTML prototypes, compared
+│   │   ├── SKILL.md
+│   │   └── templates/{blank_prototype_template,DesignSystem}.html
+│   ├── pdf/                         # PDF toolkit — extract, create, merge/split, forms
+│   │   ├── SKILL.md
+│   │   ├── REFERENCE.md             # advanced (pypdfium2, pdf-lib) + troubleshooting
+│   │   └── FORMS.md                 # filling PDF forms
+│   └── docx/                        # Word docs — create, edit, tracked changes, redlining
+│       ├── SKILL.md
+│       ├── docx-js.md               # creating .docx with docx-js
+│       ├── ooxml.md                 # OOXML editing + tracked-change patterns
+│       └── ooxml/scripts/{unpack,pack}.py
 ├── agents/                      # Subagents (invoke via the Agent tool)
 │   ├── cpto-review.md            # Executive CPTO-level review
 │   ├── prd-reviewer.md          # Senior-PM critique of a PRD/spec

@@ -95,9 +95,9 @@ Spawn 3 parallel agents using the Task tool. Each agent gets:
 ```
 You are building an HTML prototype. Your constraint: [CONSTRAINT].
 
-Read these files first:
-- [YOUR_PROTOTYPE_TEMPLATES_PATH]/blank_prototype_template.html
-- [YOUR_PROTOTYPE_TEMPLATES_PATH]/DesignSystem.html
+Read these files first (bundled with this skill):
+- templates/blank_prototype_template.html
+- templates/DesignSystem.html
 
 Design brief: [BRIEF]
 [If Figma context exists: Current design context: [FIGMA_CONTEXT]]

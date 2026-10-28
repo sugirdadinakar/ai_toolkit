@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System — Parallel Prototype</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      /* Color tokens */
+      --brand-600: #2563eb;
+      --brand-700: #1d4ed8;
+      --ink-900: #111827;
+      --ink-700: #374151;
+      --ink-600: #4b5563;
+      --ink-400: #9ca3af;
+      --line: #e5e7eb;
+      --ok: #16a34a;
+      --warn: #d97706;
+      --danger: #dc2626;
+      /* Radius & shadow */
+      --radius: 8px;
+    }
+    .focus-ring:focus-visible { outline: 2px solid var(--brand-600); outline-offset: 2px; border-radius: 6px; }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+  <div class="mx-auto max-w-4xl space-y-10 px-6 py-10">
+    <header>
+      <h1 class="text-2xl font-semibold">Design System</h1>
+      <p class="mt-1 text-sm text-gray-600">Reusable components and tokens for parallel prototypes. Copy these patterns; keep structure consistent so alternatives differ by layout, not by styling.</p>
+    </header>
+
+    <!-- COLORS -->
+    <section>
+      <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">Colors</h2>
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div><div class="h-12 rounded-lg" style="background: var(--brand-600)"></div><p class="mt-1 text-xs text-gray-600">brand-600</p></div>
+        <div><div class="h-12 rounded-lg" style="background: var(--ink-900)"></div><p class="mt-1 text-xs text-gray-600">ink-900</p></div>
+        <div><div class="h-12 rounded-lg" style="background: var(--ok)"></div><p class="mt-1 text-xs text-gray-600">ok</p></div>
+        <div><div class="h-12 rounded-lg" style="background: var(--danger)"></div><p class="mt-1 text-xs text-gray-600">danger</p></div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section>
+      <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">Typography</h2>
+      <h1 class="text-3xl font-bold tracking-tight">Display / H1</h1>
+      <h2 class="text-xl font-semibold">Heading / H2</h2>
+      <p class="text-base text-gray-900">Body — the quick brown fox jumps over the lazy dog.</p>
+      <p class="text-sm text-gray-600">Secondary / caption text.</p>
+    </section>
+
+    <!-- BUTTONS -->
+    <section>
+      <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">Buttons</h2>
+      <div class="flex flex-wrap gap-3">
+        <button class="focus-ring rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">Primary</button>
+        <button class="focus-ring rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50">Secondary</button>
+        <button class="focus-ring rounded-md px-4 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50">Ghost</button>
+        <button class="focus-ring rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700">Danger</button>
+      </div>
+    </section>
+
+    <!-- FORM FIELDS -->
+    <section>
+      <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">Form fields</h2>
+      <div class="max-w-sm space-y-4">
+        <div>
+          <label for="f-name" class="block text-sm font-medium text-gray-700">Label</label>
+          <input id="f-name" type="text" placeholder="Placeholder"
+                 class="focus-ring mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm" />
+        </div>
+        <div>
+          <label for="f-sel" class="block text-sm font-medium text-gray-700">Select</label>
+          <select id="f-sel" class="focus-ring mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm">
+            <option>Option A</option><option>Option B</option>
+          </select>
+        </div>
+        <label class="flex items-center gap-2 text-sm">
+          <input type="checkbox" class="focus-ring rounded border-gray-300" /> Checkbox option
+        </label>
+      </div>
+    </section>
+
+    <!-- CARD -->
+    <section>
+      <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">Card</h2>
+      <div class="max-w-sm rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+        <h3 class="text-base font-semibold">Card title</h3>
+        <p class="mt-1 text-sm text-gray-600">Supporting copy inside a card. Use shadow-sm and rounded-lg.</p>
+        <button class="focus-ring mt-4 rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700">Action</button>
+      </div>
+    </section>
+
+    <!-- BADGES / STATUS -->
+    <section>
+      <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">Status badges</h2>
+      <div class="flex flex-wrap gap-2">
+        <span class="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Healthy</span>
+        <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800">At risk</span>
+        <span class="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800">Critical</span>
+        <span class="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700">Neutral</span>
+      </div>
+    </section>
+
+    <!-- TABLE -->
+    <section>
+      <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">Table</h2>
+      <div class="overflow-hidden rounded-lg border border-gray-200">
+        <table class="min-w-full divide-y divide-gray-200 text-sm">
+          <thead class="bg-gray-50 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
+            <tr><th class="px-4 py-2">Name</th><th class="px-4 py-2">Status</th><th class="px-4 py-2">Value</th></tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100 bg-white">
+            <tr><td class="px-4 py-2">Row one</td><td class="px-4 py-2">Active</td><td class="px-4 py-2">$1,240</td></tr>
+            <tr><td class="px-4 py-2">Row two</td><td class="px-4 py-2">Paused</td><td class="px-4 py-2">$860</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
