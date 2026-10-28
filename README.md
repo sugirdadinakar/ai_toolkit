@@ -42,6 +42,27 @@ Invoke with the Agent tool (e.g. "have the prd-reviewer look at this"):
 
 - **prd-reviewer** — critical, severity-ranked review of a PRD or proposal.
 - **discovery-interviewer** — builds interview guides, role-plays customers, or critiques your questions (Mom Test style).
+- **cpto-review** — brutally honest, commercially-aware executive review of PRDs, architectures, and strategic decisions from a CPTO perspective.
+- **customer-brief-analyst** — assembles a 1-page pre-meeting intel brief on a named customer account by pulling live signals across your connected tools.
+
+### customer-brief-analyst — features & how it works
+
+A pre-call research assistant for PMs. Give it a customer account name (company and/or domain) and it returns a tight, scannable brief in under ~3 minutes, so you walk into a call or QBR already up to speed.
+
+**What it pulls together**
+- **Product usage (Amplitude)** — MAU/WAU, feature adoption, 90-day usage trend, and anomalies like sudden drop-offs or spikes.
+- **Support & conversations (Intercom)** — the 5 most recent conversations, open/unresolved issues, recurring complaints, and direct pain-point quotes.
+- **Internal knowledge (Glean)** — Slack threads, account/handover notes, CS call summaries, sales context, and past feedback sessions.
+- **Open issues (Jira)** — tickets tagged to the account, linked feature requests, and commitments made to them.
+- **Recent comms (Slack / Gmail)** — recent mentions and email threads where available.
+
+**How it works**
+1. Takes the account name as input.
+2. Queries each source **in parallel**, and — importantly — **never blocks on a source that fails**; it skips it and records the gap instead.
+3. Synthesises everything into a fixed 1-page template: Snapshot (tier, users, trend, 🟢/🟡/🔴 health) → What's Working → What's Broken → Open Commitments → Recent Activity → Talking Points → **Data Gaps** (so you know what's missing) with a sources footer.
+4. Labels inferences explicitly ("Usage suggests…") and avoids padding — if there are only two talking points, it writes two.
+
+> Requires the relevant connectors to be authorized (Amplitude, Intercom, Jira, Slack, etc. — via `/mcp`). Unauthorized or unavailable sources are reported under **Data Gaps** rather than causing a failure. This brief is internal prep for a meeting with the named customer, so it is not anonymised.
 
 ## Installing
 
