@@ -1,63 +1,30 @@
 #!/usr/bin/env node
 "use strict";
 /**
- * eval.js — evaluate JavaScript in the active tab (async context).
+ * eval.js — evaluate JavaScript in the active tab.
  *
  *   ./tools/eval.js 'document.title'
  *   ./tools/eval.js 'document.querySelectorAll("a").length'
  *
- * Prints the returned value (JSON for objects). Zero-dependency. Node >= 21.
+ * Connects to Chrome on :9222 via puppeteer-core. Run `npm install` first.
+ * The expression runs in page context; a returned promise is awaited.
  */
 
-const http = require("http");
+const puppeteer = require("puppeteer-core");
 
-const PORT = 9222;
+const BROWSER_URL = "http://127.0.0.1:9222";
 
-function httpGet(path) {
-  return new Promise((resolve, reject) => {
-    http
-      .get({ host: "127.0.0.1", port: PORT, path }, (res) => {
-        let data = "";
-        res.on("data", (c) => (data += c));
-        res.on("end", () => resolve(data));
-      })
-      .on("error", reject);
-  });
-}
-
-async function activePage() {
-  const targets = JSON.parse(await httpGet("/json"));
-  const pages = targets.filter((t) => t.type === "page" && t.webSocketDebuggerUrl);
+async function activePage(browser) {
+  const pages = await browser.pages();
   if (!pages.length) throw new Error("No open page. Run ./tools/start.js first.");
-  return pages[0];
-}
-
-function cdp(wsUrl) {
-  const ws = new WebSocket(wsUrl);
-  let id = 0;
-  const pending = new Map();
-  const ready = new Promise((res, rej) => {
-    ws.addEventListener("open", () => res());
-    ws.addEventListener("error", () => rej(new Error("WebSocket error connecting to Chrome")));
-  });
-  ws.addEventListener("message", (ev) => {
-    const msg = JSON.parse(ev.data);
-    if (msg.id && pending.has(msg.id)) {
-      const { res, rej } = pending.get(msg.id);
-      pending.delete(msg.id);
-      msg.error ? rej(new Error(msg.error.message)) : res(msg.result);
+  for (const p of pages) {
+    try {
+      if (await p.evaluate(() => document.visibilityState === "visible")) return p;
+    } catch {
+      /* skip non-evaluable targets */
     }
-  });
-  return {
-    ready,
-    send: (method, params = {}) =>
-      new Promise((res, rej) => {
-        const mid = ++id;
-        pending.set(mid, { res, rej });
-        ws.send(JSON.stringify({ id: mid, method, params }));
-      }),
-    close: () => ws.close(),
-  };
+  }
+  return pages[pages.length - 1];
 }
 
 async function main() {
@@ -67,33 +34,21 @@ async function main() {
     process.exit(1);
   }
 
-  const page = await activePage();
-  const client = cdp(page.webSocketDebuggerUrl);
-  await client.ready;
-
-  // Wrap in an async IIFE so `await` works and the expression's value is returned.
-  const wrapped = `(async () => { return (${expr}); })()`;
-  const result = await client.send("Runtime.evaluate", {
-    expression: wrapped,
-    awaitPromise: true,
-    returnByValue: true,
-    userGesture: true,
-  });
-  client.close();
-
-  if (result.exceptionDetails) {
-    const ex = result.exceptionDetails;
-    console.error("Error:", (ex.exception && ex.exception.description) || ex.text);
-    process.exit(1);
-  }
-
-  const v = result.result && result.result.value;
-  if (v === undefined) {
-    console.log(result.result ? result.result.type : "undefined");
-  } else if (typeof v === "object") {
-    console.log(JSON.stringify(v, null, 2));
-  } else {
-    console.log(v);
+  const browser = await puppeteer.connect({ browserURL: BROWSER_URL, defaultViewport: null });
+  try {
+    const page = await activePage(browser);
+    // Evaluate as an expression; puppeteer awaits a returned promise and
+    // serializes the result.
+    const result = await page.evaluate(`(async () => (${expr}))()`);
+    if (result === undefined) {
+      console.log("undefined");
+    } else if (typeof result === "object") {
+      console.log(JSON.stringify(result, null, 2));
+    } else {
+      console.log(result);
+    }
+  } finally {
+    browser.disconnect();
   }
 }
 

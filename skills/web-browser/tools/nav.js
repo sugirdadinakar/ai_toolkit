@@ -6,58 +6,24 @@
  *   ./tools/nav.js https://example.com
  *   ./tools/nav.js https://example.com --new
  *
- * Zero-dependency (Node built-ins only). Node >= 21.
+ * Connects to Chrome on :9222 via puppeteer-core. Run `npm install` first.
  */
 
-const http = require("http");
+const puppeteer = require("puppeteer-core");
 
-const PORT = 9222;
+const BROWSER_URL = "http://127.0.0.1:9222";
 
-function httpReq(method, path) {
-  return new Promise((resolve, reject) => {
-    const req = http.request({ host: "127.0.0.1", port: PORT, path, method }, (res) => {
-      let data = "";
-      res.on("data", (c) => (data += c));
-      res.on("end", () => resolve(data));
-    });
-    req.on("error", reject);
-    req.end();
-  });
-}
-
-async function activePage() {
-  const targets = JSON.parse(await httpReq("GET", "/json"));
-  const pages = targets.filter((t) => t.type === "page" && t.webSocketDebuggerUrl);
+async function activePage(browser) {
+  const pages = await browser.pages();
   if (!pages.length) throw new Error("No open page. Run ./tools/start.js first.");
-  return pages[0];
-}
-
-function cdp(wsUrl) {
-  const ws = new WebSocket(wsUrl);
-  let id = 0;
-  const pending = new Map();
-  const ready = new Promise((res, rej) => {
-    ws.addEventListener("open", () => res());
-    ws.addEventListener("error", () => rej(new Error("WebSocket error connecting to Chrome")));
-  });
-  ws.addEventListener("message", (ev) => {
-    const msg = JSON.parse(ev.data);
-    if (msg.id && pending.has(msg.id)) {
-      const { res, rej } = pending.get(msg.id);
-      pending.delete(msg.id);
-      msg.error ? rej(new Error(msg.error.message)) : res(msg.result);
+  for (const p of pages) {
+    try {
+      if (await p.evaluate(() => document.visibilityState === "visible")) return p;
+    } catch {
+      /* page may be a devtools/extension target; skip */
     }
-  });
-  return {
-    ready,
-    send: (method, params = {}) =>
-      new Promise((res, rej) => {
-        const mid = ++id;
-        pending.set(mid, { res, rej });
-        ws.send(JSON.stringify({ id: mid, method, params }));
-      }),
-    close: () => ws.close(),
-  };
+  }
+  return pages[pages.length - 1];
 }
 
 async function main() {
@@ -68,25 +34,15 @@ async function main() {
     process.exit(1);
   }
 
-  if (asNew) {
-    // Newer Chrome requires PUT for /json/new.
-    const out = await httpReq("PUT", "/json/new?" + encodeURIComponent(url));
-    try {
-      const t = JSON.parse(out);
-      console.log(`Opened new tab: ${t.url || url} (${t.id || ""})`);
-    } catch {
-      console.log(`Opened new tab: ${url}`);
-    }
-    return;
+  const browser = await puppeteer.connect({ browserURL: BROWSER_URL, defaultViewport: null });
+  try {
+    const page = asNew ? await browser.newPage() : await activePage(browser);
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    if (asNew) await page.bringToFront();
+    console.log(`${asNew ? "Opened new tab" : "Navigated active tab"}: ${url}`);
+  } finally {
+    browser.disconnect();
   }
-
-  const page = await activePage();
-  const client = cdp(page.webSocketDebuggerUrl);
-  await client.ready;
-  await client.send("Page.enable");
-  await client.send("Page.navigate", { url });
-  console.log(`Navigated active tab to ${url}`);
-  client.close();
 }
 
 main().catch((e) => {

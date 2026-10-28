@@ -6,7 +6,8 @@
  *   ./tools/start.js             # fresh, isolated profile
  *   ./tools/start.js --profile   # copy your real profile (cookies, logins)
  *
- * Zero-dependency (Node built-ins only). Node >= 21.
+ * Launches Chrome so the other puppeteer-core tools can connect on :9222.
+ * (This launcher itself only needs Node built-ins.)
  */
 
 const { spawn } = require("child_process");

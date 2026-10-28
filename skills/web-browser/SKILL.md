@@ -7,8 +7,13 @@ description: "Allows to interact with web pages by performing actions such as cl
 
 Minimal CDP tools for collaborative site exploration.
 
-> **Zero-dependency:** the tools use only Node.js built-ins (`http` + the global
-> `WebSocket`). Requires **Node.js ≥ 21**. No `npm install` needed.
+> **Setup:** the `nav`/`eval`/`screenshot`/`pick` tools use **puppeteer-core**.
+> Run `npm install` in `tools/` once (Node.js ≥ 18). `start.js` launches your
+> own Chrome/Chromium — set `CHROME_PATH` if it isn't auto-detected.
+
+```bash
+cd tools && npm install
+```
 
 ## Start Chrome
 

@@ -1,11 +1,11 @@
 {
-  "name": "web-browser-tools",
+  "name": "tools",
   "version": "1.0.0",
   "private": true,
-  "description": "Zero-dependency Chrome DevTools Protocol tools for collaborative web browsing.",
+  "description": "Chrome DevTools Protocol tools for collaborative web browsing (puppeteer-core).",
   "type": "commonjs",
   "engines": {
-    "node": ">=21"
+    "node": ">=18"
   },
   "bin": {
     "start": "./start.js",
@@ -14,7 +14,9 @@
     "screenshot": "./screenshot.js",
     "pick": "./pick.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "puppeteer-core": "^24.27.0"
+  },
   "license": "MIT",
   "author": "Sugirda Dinakar"
 }
