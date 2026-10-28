@@ -46,7 +46,13 @@ ai-toolkit/
 │   │   ├── docx-js.md               # creating .docx with docx-js
 │   │   ├── ooxml.md                 # OOXML editing + tracked-change patterns
 │   │   └── ooxml/scripts/{unpack,pack}.py
-│   └── pptx/SKILL.md                # PowerPoint — create (html2pptx/template), edit, analyze
+│   └── pptx/                        # PowerPoint — create (html2pptx/template), edit, analyze
+│       ├── SKILL.md
+│       ├── html2pptx.md             # HTML→PPTX workflow reference
+│       ├── ooxml.md                 # PPTX OOXML editing reference
+│       ├── html2pptx/{package.json,index.js}   # the html2pptx library
+│       ├── ooxml/scripts/{unpack,pack,validate}.py
+│       └── scripts/{inventory,replace,rearrange,thumbnail}.py
 ├── agents/                      # Subagents (invoke via the Agent tool)
 │   ├── cpto-review.md            # Executive CPTO-level review
 │   ├── prd-reviewer.md          # Senior-PM critique of a PRD/spec

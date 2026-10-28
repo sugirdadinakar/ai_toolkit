@@ -1,0 +1,17 @@
+{
+  "name": "html2pptx",
+  "version": "1.0.0",
+  "description": "Convert HTML slides to PowerPoint with accurate positioning (Playwright + PptxGenJS).",
+  "main": "index.js",
+  "type": "commonjs",
+  "bin": {},
+  "scripts": {
+    "pack": "npm pack"
+  },
+  "peerDependencies": {
+    "pptxgenjs": ">=3.12.0",
+    "playwright": ">=1.40.0"
+  },
+  "license": "MIT",
+  "author": "Sugirda Dinakar"
+}

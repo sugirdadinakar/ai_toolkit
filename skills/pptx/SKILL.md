@@ -171,7 +171,7 @@ When creating a new PowerPoint presentation from scratch, use the **html2pptx** 
    - Use `class="placeholder"` for areas where charts/tables will be added (render with gray background for visibility)
    - **CRITICAL**: Rasterize gradients and icons as PNG images FIRST using Sharp, then reference in HTML
    - **LAYOUT**: For slides with charts/tables/images, use either full-slide layout or two-column layout for better readability
-3. **Install html2pptx if not already installed**: `npm install -g skills/pptx/html2pptx.tgz` (run once)
+3. **Install html2pptx if not already installed** (run once): install from the bundled source folder — `npm install -g ./skills/pptx/html2pptx pptxgenjs playwright && npx playwright install chromium`. (To produce `html2pptx.tgz` instead, run `cd skills/pptx/html2pptx && npm pack`.) See [`html2pptx.md`](html2pptx.md) for both options.
 4. Create and run a JavaScript file using the [`html2pptx.js`](./html2pptx) library to convert HTML slides to PowerPoint and save the presentation
    - Run with: `NODE_PATH=$(npm root -g) node your-script.js`
    - Use the `html2pptx()` function to process each HTML file
