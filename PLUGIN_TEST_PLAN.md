@@ -1,4 +1,4 @@
-# AI PM Kit — Plugin Test Plan
+# AI ToolKit — Plugin Test Plan
 
 Manual QA checklist for verifying the AI PM Kit installs and behaves correctly as a Claude Code plugin. Run the phases in order; each builds on the previous one.
 
