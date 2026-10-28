@@ -49,6 +49,7 @@ Invoke with the Agent tool (e.g. "have the prd-reviewer look at this"):
 - **market-research-analyst** — senior-analyst market intelligence: market sizing (TAM/SAM/SOM with shown methodology), competitive landscape, customer segments, and strategic recommendations. Every figure carries an inline citation and a Data Sources section.
 - **prototype-builder** — builds a self-contained, interactive HTML prototype from a PRD, brief, description, or Figma design. Zero-build (Tailwind CDN + vanilla JS), accessible, opens straight in a browser.
 - **ux-designer** — UX direction for a feature: user flows, information architecture, interaction patterns, and design critique (Critical/Major/Minor). Thinks in journeys, not aesthetics — pairs with prototype-builder for the visual mockup.
+- **voice-of-customer** — synthesises ambient customer signal (Intercom, Jira, Slack, Glean/Confluence, Amplitude, interview notes) into confidence-ranked insight themes with evidence and opportunity sizing. Produces a roadmap-ready VoC brief; anonymises accounts by default.
 
 ### customer-brief-analyst — features & how it works
 
