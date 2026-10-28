@@ -46,6 +46,7 @@ Invoke with the Agent tool (e.g. "have the prd-reviewer look at this"):
 - **customer-brief-analyst** — assembles a 1-page pre-meeting intel brief on a named customer account by pulling live signals across your connected tools.
 - **data-brief-analyst** — analyses a provided dataset (CSV, export, pasted table, or screenshot) and produces a structured insight brief with transparent calculations. Works from files, not live sources — use a live-analytics agent for Amplitude queries.
 - **data-storyteller** — turns raw metrics, Amplitude data, or a dashboard into a narrative insight brief with "so what" framing (what happened → why → what it means). Calibrates to audience: exec brief, team review, or deep dive. Pairs with data-brief-analyst (files) by querying live Amplitude itself.
+- **market-research-analyst** — senior-analyst market intelligence: market sizing (TAM/SAM/SOM with shown methodology), competitive landscape, customer segments, and strategic recommendations. Every figure carries an inline citation and a Data Sources section.
 
 ### customer-brief-analyst — features & how it works
 
