@@ -1,6 +1,6 @@
 ---
 name: prd-reviewer
-description: Reviews PRDs, specs, and product proposals with the rigor of a senior PM. Use when a PRD or feature spec needs a critical second read before it goes to engineering or stakeholders — checking for clarity, measurable success criteria, scope discipline, and unstated assumptions.
+description: Reviews PRDs, epics, specs, and product proposals with the rigor of a senior PM. Use when a PRD or feature spec needs a critical second read before it goes to engineering or stakeholders — checking for clarity, measurable success criteria, scope discipline, and unstated assumptions.
 tools: Read, Grep, Glob
 model: inherit
 ---
