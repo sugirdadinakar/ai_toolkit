@@ -37,6 +37,9 @@ ai-toolkit/
 │   ├── parallel-prototype/          # 3 structurally different HTML prototypes, compared
 │   │   ├── SKILL.md
 │   │   └── templates/{blank_prototype_template,DesignSystem}.html
+│   ├── rapid-prototype/             # Zero-build HTML prototyping kit
+│   │   ├── SKILL.md
+│   │   └── templates/{blank_prototype_template.html,DesignSystem.html,CLAUDE.md}
 │   ├── pdf/                         # PDF toolkit — extract, create, merge/split, forms
 │   │   ├── SKILL.md
 │   │   ├── REFERENCE.md             # advanced (pypdfium2, pdf-lib) + troubleshooting
@@ -95,6 +98,7 @@ These activate automatically when your request matches:
 - **learn** — deep-dive research on a topic (web sources or a provided document), saved as a structured knowledge artifact in `~/.claude/knowledge/` for future reference. Keep saved knowledge general — not customer-specific data.
 - **recall** — retrieves knowledge previously saved by `learn` (exact or fuzzy match across project/personal `knowledge/` dirs), or lists what's been learned. The read side of the learn/recall pair.
 - **parallel-prototype** — generates 3 structurally different HTML prototypes in parallel (wizard vs single-page vs dashboard, etc.), presents a comparison matrix, and optionally pushes the winner/all to Figma. Pairs with the prototype-builder agent.
+- **rapid-prototype** — zero-build HTML prototyping kit: assembles interactive mockups from a bundled template + design system (tokenised Tailwind config), single-agent or parallel-agent workflow. Bundles `blank_prototype_template.html`, `DesignSystem.html`, and `CLAUDE.md` conventions.
 - **pdf** — PDF manipulation toolkit: extract text/tables, create PDFs, merge/split, rotate, watermark, OCR scanned docs, and fill forms (via pypdf, pdfplumber, reportlab, and CLI tools like qpdf).
 - **docx** — Word document creation, editing, and analysis: text extraction (pandoc), docx-js for new docs, OOXML editing, and a redlining workflow for precise tracked changes and comments.
 - **pptx** — PowerPoint creation, editing, and analysis: text extraction (markitdown), html2pptx for new decks, template-based decks (rearrange/inventory/replace), OOXML editing, and thumbnail-grid visual validation.

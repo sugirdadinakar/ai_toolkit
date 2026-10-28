@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Prototype Name]</title>
+  <!-- Zero-build: Tailwind via CDN. Edit -> Save -> Refresh. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Design tokens wired into Tailwind (replace with your own / Figma tokens).
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#675DF4",
+            "accent-hover": "#746BF5",
+            "accent-pressed": "#564BE7",
+            "accent-weak": "#EEEDFE",
+            "surface-text": "#1F2533",
+            "surface-text-weak": "#545F70",
+            "surface-border": "#D6DAE2",
+            "surface-border-weak": "#E7EAF0",
+            "surface-hover": "#F3F4F7",
+            negative: "#A8242A",
+            "negative-hover": "#8F1F24",
+            positive: "#00875A",
+          },
+          spacing: {
+            s1: "4px", s2: "8px", s3: "12px", s4: "16px",
+            s5: "20px", s6: "24px", s8: "32px",
+          },
+          borderRadius: {
+            xsmall: "4px",
+            sm: "8px",
+            md: "12px",
+          },
+          fontSize: {
+            "headline-small": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "title-medium": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+            "title-small": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "label-medium": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+            "body-small": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+          },
+          boxShadow: {
+            large: "0 10px 30px rgba(16,24,40,0.15)",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .focus-ring:focus-visible { outline: 2px solid #675DF4; outline-offset: 2px; border-radius: 6px; }
+  </style>
+</head>
+<body class="bg-surface-hover text-surface-text antialiased">
+  <!-- Accessibility: skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-sm focus:bg-white focus:px-s3 focus:py-s2 focus:shadow-large focus-ring">Skip to content</a>
+
+  <div class="flex min-h-screen">
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="hidden w-60 shrink-0 border-r border-surface-border-weak bg-white md:block">
+      <div class="flex items-center gap-s2 px-s4 py-s4">
+        <div class="h-7 w-7 rounded-sm bg-accent"></div>
+        <span class="text-title-small">[Product]</span>
+      </div>
+      <nav aria-label="Primary" class="px-s2 py-s2 space-y-1">
+        <a href="#" aria-current="page" class="focus-ring flex items-center gap-s2 rounded-sm bg-accent-weak px-s3 py-s2 text-label-medium text-accent">Dashboard</a>
+        <a href="#" class="focus-ring flex items-center gap-s2 rounded-sm px-s3 py-s2 text-label-medium text-surface-text-weak hover:bg-surface-hover">Section</a>
+        <a href="#" class="focus-ring flex items-center gap-s2 rounded-sm px-s3 py-s2 text-label-medium text-surface-text-weak hover:bg-surface-hover">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- ===================== MAIN COLUMN ===================== -->
+    <div class="flex min-w-0 flex-1 flex-col">
+      <!-- HEADER -->
+      <header class="flex items-center justify-between border-b border-surface-border-weak bg-white px-s6 py-s3">
+        <nav aria-label="Breadcrumb" class="text-body-small text-surface-text-weak">
+          <ol class="flex items-center gap-s2">
+            <li>Home</li>
+            <li aria-hidden="true">/</li>
+            <li class="text-surface-text">[Screen]</li>
+          </ol>
+        </nav>
+        <div class="flex items-center gap-s3">
+          <button class="focus-ring rounded-sm bg-accent px-s4 py-s2 text-label-medium text-white hover:bg-accent-hover">Primary action</button>
+          <div class="h-8 w-8 rounded-full bg-surface-border" aria-hidden="true"></div>
+        </div>
+      </header>
+
+      <!-- MAIN -->
+      <main id="main" class="flex-1 px-s6 py-s6">
+        <h1 class="text-headline-small">[Screen title]</h1>
+        <p class="mt-s1 text-body-small text-surface-text-weak">[One-line description of this screen.]</p>
+
+        <!-- SECTION: main content (replace with assembled components) -->
+        <section class="mt-s6 rounded-md border border-surface-border-weak bg-white p-s6">
+          <p class="text-body-small text-surface-text-weak">Assemble components from DesignSystem.html here.</p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- ===================== INTERACTIONS ===================== -->
+  <!-- Vanilla JS only. Single script block at end of body. -->
+  <script>
+    (function () {
+      "use strict";
+      // Modal helpers
+      window.openModal = function (id) { document.getElementById(id)?.classList.remove("hidden"); };
+      window.closeModal = function (id) { document.getElementById(id)?.classList.add("hidden"); };
+
+      // Close overlays on Escape
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          document.querySelectorAll(".fixed.z-50:not(.hidden)").forEach(function (el) {
+            el.classList.add("hidden");
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

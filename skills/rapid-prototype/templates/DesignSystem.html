@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System — Rapid Prototype</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          accent: "#675DF4", "accent-hover": "#746BF5", "accent-pressed": "#564BE7", "accent-weak": "#EEEDFE",
+          "surface-text": "#1F2533", "surface-text-weak": "#545F70",
+          "surface-border": "#D6DAE2", "surface-border-weak": "#E7EAF0", "surface-hover": "#F3F4F7",
+          negative: "#A8242A", "negative-hover": "#8F1F24", positive: "#00875A",
+        },
+        spacing: { s1:"4px", s2:"8px", s3:"12px", s4:"16px", s5:"20px", s6:"24px", s8:"32px" },
+        borderRadius: { xsmall:"4px", sm:"8px", md:"12px" },
+        fontSize: {
+          "headline-small":["20px",{lineHeight:"28px",fontWeight:"600"}],
+          "title-medium":["16px",{lineHeight:"24px",fontWeight:"600"}],
+          "title-small":["14px",{lineHeight:"20px",fontWeight:"600"}],
+          "label-medium":["14px",{lineHeight:"20px",fontWeight:"500"}],
+          "body-small":["14px",{lineHeight:"20px",fontWeight:"400"}],
+        },
+        boxShadow: { large:"0 10px 30px rgba(16,24,40,0.15)" },
+      } },
+    };
+  </script>
+  <style>.focus-ring:focus-visible{outline:2px solid #675DF4;outline-offset:2px;border-radius:6px}</style>
+</head>
+<body class="bg-surface-hover text-surface-text">
+  <div class="mx-auto max-w-4xl space-y-s8 px-s6 py-s8">
+    <header>
+      <h1 class="text-headline-small">Design System</h1>
+      <p class="mt-s1 text-body-small text-surface-text-weak">Copy these components into prototypes. Every interactive element carries <code>focus-ring</code>; icons are <code>aria-hidden</code>.</p>
+    </header>
+
+    <!-- BUTTONS -->
+    <section class="space-y-s3">
+      <h2 class="text-title-medium">Buttons</h2>
+      <div class="flex flex-wrap gap-s3">
+        <button class="focus-ring px-s4 py-s2 rounded-sm bg-accent text-white hover:bg-accent-hover text-label-medium">Primary</button>
+        <button class="focus-ring px-s4 py-s2 rounded-sm border border-surface-border text-surface-text hover:bg-surface-hover text-label-medium">Secondary</button>
+        <button class="focus-ring px-s4 py-s2 rounded-sm text-accent hover:bg-accent-weak text-label-medium">Tertiary</button>
+        <button class="focus-ring px-s4 py-s2 rounded-sm bg-negative text-white hover:bg-negative-hover text-label-medium">Delete</button>
+      </div>
+    </section>
+
+    <!-- SEARCH INPUT + FORM FIELD -->
+    <section class="space-y-s3">
+      <h2 class="text-title-medium">Inputs</h2>
+      <div class="flex items-center gap-s2 h-10 w-80 rounded-sm border border-surface-border bg-white px-s3">
+        <svg class="w-4 h-4 text-surface-text-weak" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" placeholder="Search..." class="flex-1 text-body-small outline-none" />
+      </div>
+      <div class="max-w-sm">
+        <label for="field" class="block text-title-small">Label</label>
+        <input id="field" type="text" placeholder="Placeholder" class="focus-ring mt-s1 w-full rounded-sm border border-surface-border px-s3 py-s2 text-body-small" />
+        <p class="mt-s1 text-body-small text-surface-text-weak">Helper text goes here.</p>
+      </div>
+    </section>
+
+    <!-- BADGES / TYPE LABELS -->
+    <section class="space-y-s3">
+      <h2 class="text-title-medium">Badges</h2>
+      <div class="flex flex-wrap gap-s2">
+        <span class="rounded-full bg-accent-weak px-s3 py-s1 text-body-small text-accent">Info</span>
+        <span class="rounded-full px-s3 py-s1 text-body-small text-white" style="background:#00875A">Success</span>
+        <span class="rounded-full bg-negative px-s3 py-s1 text-body-small text-white">Error</span>
+        <span class="rounded-full bg-surface-hover px-s3 py-s1 text-body-small text-surface-text-weak">Neutral</span>
+      </div>
+    </section>
+
+    <!-- CARD -->
+    <section class="space-y-s3">
+      <h2 class="text-title-medium">Card</h2>
+      <div class="max-w-sm rounded-md border border-surface-border-weak bg-white p-s5 shadow-large">
+        <h3 class="text-title-small">Card title</h3>
+        <p class="mt-s1 text-body-small text-surface-text-weak">Supporting copy inside a card.</p>
+        <button class="focus-ring mt-s4 rounded-sm bg-accent px-s3 py-s2 text-label-medium text-white hover:bg-accent-hover">Action</button>
+      </div>
+    </section>
+
+    <!-- LIST ITEM -->
+    <section class="space-y-s3">
+      <h2 class="text-title-medium">List item</h2>
+      <ul class="max-w-md divide-y divide-surface-border-weak rounded-md border border-surface-border-weak bg-white">
+        <li class="flex items-center gap-s3 px-s4 py-s3">
+          <input type="checkbox" class="focus-ring rounded-xsmall border-surface-border" aria-label="Select row" />
+          <div class="h-8 w-8 rounded-full bg-surface-border" aria-hidden="true"></div>
+          <div class="min-w-0 flex-1">
+            <p class="text-label-medium">Jordan Lee</p>
+            <p class="text-body-small text-surface-text-weak">Product Manager</p>
+          </div>
+          <span class="rounded-full bg-accent-weak px-s3 py-s1 text-body-small text-accent">Active</span>
+          <button class="focus-ring rounded-sm px-s2 py-s1 text-surface-text-weak hover:bg-surface-hover" aria-label="Row actions">⋯</button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- TABS -->
+    <section class="space-y-s3">
+      <h2 class="text-title-medium">Tabs</h2>
+      <div class="flex gap-s2 border-b border-surface-border-weak">
+        <button class="tab-btn px-s4 py-s2 text-label-medium border-b-2 border-accent text-accent" data-tab="ds-tab1">Tab 1</button>
+        <button class="tab-btn px-s4 py-s2 text-label-medium border-b-2 border-transparent text-surface-text-weak hover:text-surface-text" data-tab="ds-tab2">Tab 2</button>
+      </div>
+      <div id="ds-tab1" class="tab-content py-s4 text-body-small">Content one.</div>
+      <div id="ds-tab2" class="tab-content py-s4 text-body-small hidden">Content two.</div>
+    </section>
+
+    <!-- BANNER -->
+    <section class="space-y-s3">
+      <h2 class="text-title-medium">Banner</h2>
+      <div class="rounded-sm border border-accent-weak bg-accent-weak px-s4 py-s3 text-body-small text-accent" role="status">Heads up — this is an informational banner.</div>
+    </section>
+
+    <!-- EMPTY STATE -->
+    <section class="space-y-s3">
+      <h2 class="text-title-medium">Empty state</h2>
+      <div class="rounded-md border border-dashed border-surface-border bg-white p-s8 text-center">
+        <p class="text-title-small">Nothing here yet</p>
+        <p class="mt-s1 text-body-small text-surface-text-weak">Create your first item to get started.</p>
+        <button class="focus-ring mt-s4 rounded-sm bg-accent px-s4 py-s2 text-label-medium text-white hover:bg-accent-hover">Create item</button>
+      </div>
+    </section>
+
+    <!-- MODAL (demo) -->
+    <section class="space-y-s3">
+      <h2 class="text-title-medium">Dialog</h2>
+      <button class="focus-ring rounded-sm border border-surface-border px-s4 py-s2 text-label-medium hover:bg-surface-hover" onclick="openModal('ds-modal')">Open dialog</button>
+      <div id="ds-modal" class="fixed inset-0 z-50 hidden bg-black/50" role="dialog" aria-modal="true" aria-labelledby="ds-modal-title">
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+          <div class="w-full max-w-lg rounded-md bg-white p-s6 shadow-large">
+            <h2 id="ds-modal-title" class="text-headline-small">Dialog title</h2>
+            <p class="mb-s6 mt-s2 text-body-small text-surface-text-weak">Dialog body content.</p>
+            <div class="flex justify-end gap-s3">
+              <button onclick="closeModal('ds-modal')" class="focus-ring rounded-sm px-s4 py-s2 text-label-medium hover:bg-surface-hover">Cancel</button>
+              <button class="focus-ring rounded-sm bg-accent px-s4 py-s2 text-label-medium text-white hover:bg-accent-hover">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+      window.openModal = function (id) { document.getElementById(id)?.classList.remove("hidden"); };
+      window.closeModal = function (id) { document.getElementById(id)?.classList.add("hidden"); };
+      document.querySelectorAll(".tab-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var scope = btn.closest("section");
+          scope.querySelectorAll(".tab-content").forEach(function (t) { t.classList.add("hidden"); });
+          scope.querySelector("#" + btn.dataset.tab).classList.remove("hidden");
+          scope.querySelectorAll(".tab-btn").forEach(function (b) {
+            b.classList.remove("border-accent", "text-accent");
+            b.classList.add("border-transparent", "text-surface-text-weak");
+          });
+          btn.classList.add("border-accent", "text-accent");
+          btn.classList.remove("border-transparent", "text-surface-text-weak");
+        });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") document.querySelectorAll(".fixed.z-50:not(.hidden)").forEach(function (el) { el.classList.add("hidden"); });
+      });
+    })();
+  </script>
+</body>
+</html>
