@@ -35,6 +35,7 @@ ai-toolkit/
 │   ├── learn/SKILL.md               # Deep-dive research saved as reusable knowledge
 │   ├── recall/SKILL.md              # Retrieve knowledge saved by the learn skill
 │   ├── roadmap-narrative/SKILL.md   # One roadmap → exec/eng/customer narratives
+│   ├── sprint-health/SKILL.md       # Jira sprint health check + shareable status
 │   ├── parallel-prototype/          # 3 structurally different HTML prototypes, compared
 │   │   ├── SKILL.md
 │   │   └── templates/{blank_prototype_template,DesignSystem}.html
@@ -99,6 +100,7 @@ These activate automatically when your request matches:
 - **learn** — deep-dive research on a topic (web sources or a provided document), saved as a structured knowledge artifact in `~/.claude/knowledge/` for future reference. Keep saved knowledge general — not customer-specific data.
 - **recall** — retrieves knowledge previously saved by `learn` (exact or fuzzy match across project/personal `knowledge/` dirs), or lists what's been learned. The read side of the learn/recall pair.
 - **roadmap-narrative** — turns a rough roadmap into three audience-specific narratives (executive summary, engineering/team brief, customer-facing) off one input, after naming the narrative arc. Translates feature names into outcomes; never invents initiatives.
+- **sprint-health** — pulls Jira sprint data (or a pasted board), checks velocity vs elapsed time, flags blockers/stale/scope-creep/unestimated issues, forecasts what slips, and emits a copy-paste status update (plus an end-of-sprint retro section).
 - **parallel-prototype** — generates 3 structurally different HTML prototypes in parallel (wizard vs single-page vs dashboard, etc.), presents a comparison matrix, and optionally pushes the winner/all to Figma. Pairs with the prototype-builder agent.
 - **rapid-prototype** — zero-build HTML prototyping kit: assembles interactive mockups from a bundled template + design system (tokenised Tailwind config), single-agent or parallel-agent workflow. Bundles `blank_prototype_template.html`, `DesignSystem.html`, and `CLAUDE.md` conventions.
 - **pdf** — PDF manipulation toolkit: extract text/tables, create PDFs, merge/split, rotate, watermark, OCR scanned docs, and fill forms (via pypdf, pdfplumber, reportlab, and CLI tools like qpdf).
