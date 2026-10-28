@@ -65,6 +65,10 @@ ai-toolkit/
 │   │   └── tools/{start,nav,eval,screenshot,pick}.js + package.json + package-lock.json
 │   ├── xlsx/SKILL.md                # Spreadsheets — formulas, formatting, recalc, analysis
 │   │                                # (needs a recalc.py helper to run recalculation)
+│   ├── taste-skill/                 # "design-taste-frontend" anti-slop frontend skill (MIT, imported)
+│   │   ├── SKILL.md
+│   │   ├── LICENSE
+│   │   └── ATTRIBUTION.md
 │   ├── jtbd.md                      # (flat reference) Jobs-to-be-Done extractor
 │   ├── opportunity-tree.md          # (flat reference) Opportunity Solution Tree
 │   ├── prd.md                       # (flat reference) PRD generator template
@@ -129,6 +133,7 @@ These activate automatically when your request matches:
 - **pptx** — PowerPoint creation, editing, and analysis: text extraction (markitdown), html2pptx for new decks, template-based decks (rearrange/inventory/replace), OOXML editing, and thumbnail-grid visual validation.
 - **web-browser** — remote-controls Chrome/Chromium via the Chrome DevTools Protocol (navigate, eval JS, screenshot, interactive element picker). Node tools built on `puppeteer-core` (run `npm install` in `tools/`; Node ≥18).
 - **xlsx** — spreadsheet creation, editing, and analysis (openpyxl + pandas): formula-first construction, financial-model formatting conventions, zero-error delivery, and a LibreOffice-based `recalc.py` recalculation workflow.
+- **taste-skill** (`design-taste-frontend`) — "anti-slop" frontend skill for landing pages, portfolios, and redesigns: reads the brief, infers a design direction, and ships non-templated interfaces. Imported from [Shubhamsaboo/taste-skill](https://github.com/Shubhamsaboo/taste-skill) (MIT; see the skill's `LICENSE`/`ATTRIBUTION.md`).
 
 ## Agents
 
