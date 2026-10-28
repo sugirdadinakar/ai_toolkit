@@ -1,23 +1,33 @@
 # ai-toolkit
 
-The Ultimate PM Toolkit for Claude Code — product-management commands, skills, and agents that help you go from fuzzy idea to build-ready spec.
+The Ultimate PM Toolkit for Claude Code — product-management commands, skills, and agents that cover the whole PM workflow: discovery, specs, research synthesis, customer intel, data analysis, market research, UX design, and prototyping.
 
 ## What's inside
 
 ```
 ai-toolkit/
 ├── .claude-plugin/
-│   └── plugin.json              # Plugin manifest
+│   ├── plugin.json              # Plugin manifest
+│   └── marketplace.json         # Marketplace manifest (enables /plugin install)
 ├── commands/                    # Slash commands (you invoke these)
-│   ├── prd.md                   # /prd      — draft a PRD from a problem/idea
-│   ├── jtbd.md                  # /jtbd     — Jobs-to-be-Done analysis
+│   ├── prd.md                   # /prd       — draft a PRD from a problem/idea
+│   ├── jtbd.md                  # /jtbd      — Jobs-to-be-Done analysis
 │   └── discovery.md             # /discovery — discovery plan + interview guide
 ├── skills/                      # Skills (auto-trigger from context)
-│   ├── prd-writing/SKILL.md     # Writing and refining PRDs
+│   ├── prd-writing/SKILL.md         # Writing and refining PRDs
 │   └── research-synthesis/SKILL.md  # Synthesizing user research into insights
 ├── agents/                      # Subagents (invoke via the Agent tool)
+│   ├── cpto-review.md            # Executive CPTO-level review
 │   ├── prd-reviewer.md          # Senior-PM critique of a PRD/spec
-│   └── discovery-interviewer.md # Build/role-play/critique discovery interviews
+│   ├── discovery-interviewer.md # Build/role-play/critique discovery interviews
+│   ├── customer-brief-analyst.md# 1-page pre-meeting customer intel brief
+│   ├── data-brief-analyst.md    # Insight brief from a provided dataset/file
+│   ├── data-storyteller.md      # Narrative metrics brief (live Amplitude)
+│   ├── market-research-analyst.md# Market sizing & competitive intelligence
+│   ├── prototype-builder.md     # Zero-build interactive HTML prototypes
+│   ├── ux-designer.md           # User flows, IA, and UX critique
+│   └── voice-of-customer.md     # Synthesize customer signal into VoC themes
+├── .gitignore
 └── README.md
 ```
 
@@ -72,16 +82,16 @@ A pre-call research assistant for PMs. Give it a customer account name (company 
 
 ## Installing
 
-### From a marketplace (recommended)
-If this repo is published as a plugin marketplace, add it and install:
+### From GitHub (recommended)
+Add the marketplace and install the plugin:
 
 ```
 /plugin marketplace add sugirda-rgb/ai_toolkit
-/plugin install ai-toolkit
+/plugin install ai-toolkit@ai-toolkit-marketplace
 ```
 
 ### Local development
-Point Claude Code at a local marketplace that references this directory, or clone the repo and add it as a marketplace from the local path:
+Clone the repo and add it as a marketplace from the local path:
 
 ```bash
 git clone https://github.com/sugirda-rgb/ai_toolkit.git
@@ -89,10 +99,12 @@ git clone https://github.com/sugirda-rgb/ai_toolkit.git
 
 ```
 /plugin marketplace add ./ai_toolkit
-/plugin install ai-toolkit
+/plugin install ai-toolkit@ai-toolkit-marketplace
 ```
 
-Then restart or reload, and run `/help` to confirm the `/prd`, `/jtbd`, and `/discovery` commands appear.
+Then restart or reload, and run `/help` to confirm the `/prd`, `/jtbd`, and `/discovery` commands appear. Agents show up under the Agent tool, and skills trigger automatically.
+
+> Several agents rely on connectors (Amplitude, Intercom, Jira, Slack, Figma, etc.). Authorize these via `/mcp`; agents that pull live signals report unavailable sources as data gaps rather than failing.
 
 ## Development
 
