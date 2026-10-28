@@ -22,7 +22,8 @@ ai-toolkit/
 │   ├── research-synthesis/SKILL.md  # Synthesizing user research into insights
 │   ├── decision-brief/SKILL.md      # 1-page decision brief with a recommendation
 │   ├── churn-signal/SKILL.md        # Account health score + recommended intervention
-│   └── debate/SKILL.md              # Champion vs Sceptic stress-test of an idea
+│   ├── debate/SKILL.md              # Champion vs Sceptic stress-test of an idea
+│   └── design-an-interface/SKILL.md # "Design it twice" — parallel interface designs
 ├── agents/                      # Subagents (invoke via the Agent tool)
 │   ├── cpto-review.md            # Executive CPTO-level review
 │   ├── prd-reviewer.md          # Senior-PM critique of a PRD/spec
@@ -59,6 +60,7 @@ These activate automatically when your request matches:
 - **decision-brief** — produces a 1-page decision brief (framing, options, trade-off table, assumptions, and a clear recommendation with one next step). Backs the `/decision-brief` command.
 - **churn-signal** — assesses churn/expansion risk for an account or segment: pulls usage + sentiment + engagement signals, scores account health (🟢/🟡/🟠/🔴), and recommends a specific intervention. Supports bulk segment mode.
 - **debate** — stress-tests a product idea with parallel Champion vs Sceptic agents, then synthesises a risk register, minimum viable scope, assumption map, and a go/no-go recommendation.
+- **design-an-interface** — "Design It Twice": spawns parallel sub-agents to produce radically different interface/API designs for a module, then compares them on simplicity, depth, and ease of correct use.
 
 ## Agents
 
