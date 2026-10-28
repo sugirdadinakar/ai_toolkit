@@ -34,6 +34,7 @@ ai-toolkit/
 │   │   └── templates/{interview,synthesis}-template.md
 │   ├── learn/SKILL.md               # Deep-dive research saved as reusable knowledge
 │   ├── recall/SKILL.md              # Retrieve knowledge saved by the learn skill
+│   ├── roadmap-narrative/SKILL.md   # One roadmap → exec/eng/customer narratives
 │   ├── parallel-prototype/          # 3 structurally different HTML prototypes, compared
 │   │   ├── SKILL.md
 │   │   └── templates/{blank_prototype_template,DesignSystem}.html
@@ -97,6 +98,7 @@ These activate automatically when your request matches:
 - **interview-analysis** — analyses a folder of customer interview transcripts in parallel (Teresa Torres Continuous Discovery), extracting pain points, workflow use cases, terminology reactions, and unprompted signals, then synthesises cross-interview patterns. Includes analysis + synthesis templates; anonymises PII by default.
 - **learn** — deep-dive research on a topic (web sources or a provided document), saved as a structured knowledge artifact in `~/.claude/knowledge/` for future reference. Keep saved knowledge general — not customer-specific data.
 - **recall** — retrieves knowledge previously saved by `learn` (exact or fuzzy match across project/personal `knowledge/` dirs), or lists what's been learned. The read side of the learn/recall pair.
+- **roadmap-narrative** — turns a rough roadmap into three audience-specific narratives (executive summary, engineering/team brief, customer-facing) off one input, after naming the narrative arc. Translates feature names into outcomes; never invents initiatives.
 - **parallel-prototype** — generates 3 structurally different HTML prototypes in parallel (wizard vs single-page vs dashboard, etc.), presents a comparison matrix, and optionally pushes the winner/all to Figma. Pairs with the prototype-builder agent.
 - **rapid-prototype** — zero-build HTML prototyping kit: assembles interactive mockups from a bundled template + design system (tokenised Tailwind config), single-agent or parallel-agent workflow. Bundles `blank_prototype_template.html`, `DesignSystem.html`, and `CLAUDE.md` conventions.
 - **pdf** — PDF manipulation toolkit: extract text/tables, create PDFs, merge/split, rotate, watermark, OCR scanned docs, and fill forms (via pypdf, pdfplumber, reportlab, and CLI tools like qpdf).
