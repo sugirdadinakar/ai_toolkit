@@ -19,7 +19,8 @@ ai-toolkit/
 │   └── decision-brief.md        # /decision-brief — 1-page decision brief w/ recommendation
 ├── skills/                      # Skills (auto-trigger from context)
 │   ├── prd-writing/SKILL.md         # Writing and refining PRDs
-│   └── research-synthesis/SKILL.md  # Synthesizing user research into insights
+│   ├── research-synthesis/SKILL.md  # Synthesizing user research into insights
+│   └── decision-brief/SKILL.md      # 1-page decision brief with a recommendation
 ├── agents/                      # Subagents (invoke via the Agent tool)
 │   ├── cpto-review.md            # Executive CPTO-level review
 │   ├── prd-reviewer.md          # Senior-PM critique of a PRD/spec
@@ -53,6 +54,7 @@ These activate automatically when your request matches:
 
 - **prd-writing** — triggers when you're turning an idea into a spec or tightening an existing PRD.
 - **research-synthesis** — triggers when you have interview notes, surveys, or tickets to turn into ranked insights.
+- **decision-brief** — produces a 1-page decision brief (framing, options, trade-off table, assumptions, and a clear recommendation with one next step). Backs the `/decision-brief` command.
 
 ## Agents
 
